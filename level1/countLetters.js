@@ -1,9 +1,22 @@
 /**
  * Given a string, returns an object containing attributes for each letter occuring in the string, with the associated value being the number of occurances of that character in the string.
  */
-function countLetters() {
+function countLetters(str) {
+  let count ={};
 
-}
+    for(i=0;i<str.length;i++){
+            if (count.hasOwnProperty(str[i])) {
+              count[str[i]] += 1;
+            } else {
+              
+              count[str[i]] = 1;
+            }
+          }
+        
+          return count;
+        }
+
+
 
 describe('countLetters', function() {
   const assert = require("chai").assert;

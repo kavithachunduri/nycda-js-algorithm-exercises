@@ -1,11 +1,23 @@
 /*
- * Checks whether x and y are in epsilon range of each other, that is, whether x and y are the same within a certain margin of error (given by epsilon).
+ * Checks whether x and y are in epsilon range of each other, that is, whether x and y are the same within a certain margin of error 
+ (given by epsilon).
  * You're not allowed to use any functions from Math.
  * Returns true or false.
  */
 function equalsWithEpsilon(x, y, epsilon) {
+  
+    let difference;
+    if (x <= y) {
+      difference = y - x;
+    }
+    else {
+      difference = x - y;
+    }
+  
+   if(  difference <= epsilon){ return true ;}
+    else{ return false;}
+  }
 
-}
 
 describe('equalsWithEpsilon', function() {
   const assert = require("chai").assert;
